@@ -34,15 +34,27 @@ const createAuthor = async () => {
     console.log('New author:', auther);
 };
 
+// Create Book
+const createBook = async () => {
+    const bookData = {
+        title: "Harry Potter and the Sorcerer's Stone",
+        isAvailable: true,
+    };
+
+    const book = await Book.create(bookData);
+    
+    console.log("New book:", book);
+};
 
 
 //Auther id = 67163d5ab92712fa413d56ad
+//book id = 67163f88248b2e1ff06d1ca2
 /*------------------------------- Run Queries -------------------------------*/
 
 const runQueries = async () => {
     console.log('Queries running.');
-    await createAuthor();
-    // await createBook();
+    // await createAuthor();
+    await createBook();
     // await findBooks();
     // await assignAuthorToBook();
     // await removeAuthorFromBook();
