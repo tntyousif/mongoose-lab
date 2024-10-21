@@ -25,8 +25,8 @@ connect()
 //creat Auther
 const createAuthor = async () => {
     const autherData = {
-        name: '',
-        email: '',
+        name: 'J.K. Rowling',
+        email: 'jk.rowling@mail.com'
     };
 
     const auther =await Author.create(autherData);
@@ -35,11 +35,13 @@ const createAuthor = async () => {
 };
 
 
+
+//Auther id = 67163d5ab92712fa413d56ad
 /*------------------------------- Run Queries -------------------------------*/
 
 const runQueries = async () => {
     console.log('Queries running.');
-    // await createAuthor();
+    await createAuthor();
     // await createBook();
     // await findBooks();
     // await assignAuthorToBook();
