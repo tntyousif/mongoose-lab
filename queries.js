@@ -46,12 +46,40 @@ const createBook = async () => {
     console.log("New book:", book);
 };
 
-// find book
+// find books
 const findBooks = async () => {
     const books = await Book.find({}).populate("authors");
     console.log("All books:", books);
 };
 
+// assigne author to book
+const assignAuthorToBook = async () => {
+    const bookId = '67163f88248b2e1ff06d1ca2';
+    const authorId = '67163d5ab92712fa413d56ad';
+
+    const updatedBook = await Book.findByIdAndUpdate(
+        bookId,
+        { authors: authorId },
+        { new: true }
+    )
+
+    console.log('Updated book:', updatedBook);
+
+};
+
+// Remove author from a book
+const removeAuthorFromBook = async () => {
+    const bookId = '67163f88248b2e1ff06d1ca2';
+    const authorId = '67163f88248b2e1ff06d1ca2';
+
+    const updatedBook = await Book.findByIdAndUpdate(
+        bookId,
+        { authors: authorId },
+        { new: true }
+    );
+
+    console.log('Updated book after removing author:', updatedBook);
+};
 
 //Auther id = 67163d5ab92712fa413d56ad
 //book id = 67163f88248b2e1ff06d1ca2
@@ -61,7 +89,7 @@ const runQueries = async () => {
     console.log('Queries running.');
     // await createAuthor();
     // await createBook();
-    await findBooks();
+    // await findBooks();
     // await assignAuthorToBook();
-    // await removeAuthorFromBook();
+    await removeAuthorFromBook();
 };
