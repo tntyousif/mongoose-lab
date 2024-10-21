@@ -46,6 +46,12 @@ const createBook = async () => {
     console.log("New book:", book);
 };
 
+// find book
+const findBooks = async () => {
+    const books = await Book.find({}).populate("authors");
+    console.log("All books:", books);
+};
+
 
 //Auther id = 67163d5ab92712fa413d56ad
 //book id = 67163f88248b2e1ff06d1ca2
@@ -54,8 +60,8 @@ const createBook = async () => {
 const runQueries = async () => {
     console.log('Queries running.');
     // await createAuthor();
-    await createBook();
-    // await findBooks();
+    // await createBook();
+    await findBooks();
     // await assignAuthorToBook();
     // await removeAuthorFromBook();
 };
