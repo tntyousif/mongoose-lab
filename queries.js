@@ -15,13 +15,24 @@ const connect = async () => {
     await mongoose.disconnect();
     console.log('Disconnected from MongoDB');
     process.exit();
-  };
+};
   
   
-  connect()
+connect()
 
 /*----------------------------- Query Functions -----------------------------*/
 
+//creat Auther
+const createAuthor = async () => {
+    const autherData = {
+        name: '',
+        email: '',
+    };
+
+    const auther =await Author.create(autherData);
+
+    console.log('New author:', auther);
+};
 
 
 /*------------------------------- Run Queries -------------------------------*/
@@ -33,4 +44,4 @@ const runQueries = async () => {
     // await findBooks();
     // await assignAuthorToBook();
     // await removeAuthorFromBook();
-  };
+};
